@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/search_by_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search Photos By Tags"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/search_by_radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/person_radio_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Person">
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/location_radio_button"
+                    android:layout_width="111dp"
+                    android:layout_height="wrap_content"
+                    android:text="Location">
+                </RadioButton>
+            </RadioGroup>
+            <TextView
+                android:id="@+id/search_value_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:text="Tag: "
+                android:textStyle="bold"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/search_value_edit_text"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:hint="Person: Bob"
+                android:singleLine="true" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/add_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="add_tag"
+                android:backgroundTint="@color/light_blue"
+                android:text="Add Tag"/>
+
+            <Button
+                android:id="@+id/remove_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="remove_tag"
+                android:backgroundTint="@color/light_blue"
+                android:text="Remove Tag"/>
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/tags"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/and_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="and_search"
+                android:backgroundTint="@color/toolbar"
+                android:text="And Search"/>
+
+            <Button
+                android:id="@+id/or_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="or_search"
+                android:backgroundTint="@color/toolbar"
+                android:text="Or Search"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="17dp"
+            android:text="All Associated Tags"/>
+
+        <ListView
+            android:id="@+id/searchResults"
+            android:layout_width="match_parent"
+            android:layout_height="175dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="back"
+                android:text="Back"/>
+
+            <Button
+                android:id="@+id/displayPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="display"
+                android:text="Display Photo" />
+
+        </LinearLayout>
+    </LinearLayout></RelativeLayout>
